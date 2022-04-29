@@ -1,0 +1,34 @@
+{
+  "name": "stitchtail",
+  "version": "1.0.0",
+  "author": "coloredwax",
+  "license": "MIT",
+  "description": "Generate classes depending on passed props using a base, variants, and compounds.",
+  "keywords": [
+    "base",
+    "variants",
+    "compounds",
+    "css-in-js",
+    "stitches",
+    "tailwind"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coloredwax/stitchtail.git"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint --fix src"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.21.0",
+    "@typescript-eslint/parser": "^5.21.0",
+    "eslint": "^8.14.0",
+    "typescript": "^4.6.3"
+  }
+}

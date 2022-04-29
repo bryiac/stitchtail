@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "CommonJS",
+    "lib": ["ES2017", "DOM"],
+    "outDir": "dist",
+    "removeComments": true,
+    "declaration": true,
+    "strict": true,
+  },
+  "include": ["src"]
+}
