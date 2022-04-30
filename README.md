@@ -46,8 +46,7 @@ yarn add stitchtail
         green: "bg-green-500",
         blue: "bg-blue-500"
       },
-      disabled: "cursor-not-allowed",
-      children: ""
+      disabled: "cursor-not-allowed"
     },
 
     compounds: [

@@ -9,6 +9,7 @@ const stitchtail = <Props = null, Propless = null>({ base, variants, compounds }
 		const classes = [...base.split(" ")];
 
 		if (props) {
+			// This part needs some improvements with type casting...
 			Object.entries(props).forEach(([key, value]) => {
 				if (variants[key as keyof typeof variants] && value) {
 					// eslint-disable-next-line @typescript-eslint/ban-ts-comment
