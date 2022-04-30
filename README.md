@@ -34,7 +34,7 @@ yarn add stitchtail
   interface Props {
     colors: "red" | "green" | "blue",
     disabled?: boolean,
-    children: React.ReactNode
+    children?: React.ReactNode
   };
 
   const classes = stitchtail<Props>({
