@@ -1,6 +1,6 @@
 interface Parameters<Props, Propless> {
   base: string,
-  variants: Propless extends null ? Partial<{ [Key in keyof Props]: Props[Key] extends string ? Partial<{ [Value in Props[Key]]: string }> : string }> : Propless,
+  variants: Propless extends null ? Partial<{ [Key in keyof Props]: Props[Key] extends string | undefined ? Partial<{ [Value in Extract<Props[Key], string>]: string }> : string }> : Propless,
   compounds: Array<[Partial<Propless extends null ? Props : { [Key in keyof Propless]: Propless[Key] extends object ? keyof Propless[Key] : boolean }>, string]>
 }
 
@@ -9,7 +9,6 @@ const stitchtail = <Props = null, Propless = null>({ base, variants, compounds }
 		const classes = [...base.split(" ")];
 
 		if (props) {
-			// This part needs some improvements with type casting...
 			Object.entries(props).forEach(([key, value]) => {
 				if (variants[key as keyof typeof variants] && value) {
 					// eslint-disable-next-line @typescript-eslint/ban-ts-comment
