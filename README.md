@@ -16,7 +16,7 @@ npm install stitchtail
 yarn add stitchtail
 ```
 
-- Using **[tailwind](https://tailwindcss.com/)** and its **[intellisense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)**? Try out the intellisense with **stitchtails** by simply adding this to your vscode `settings.json`
+- Using **[tailwind](https://tailwindcss.com/)** and its **[intellisense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)**? Try out the intellisense with **stitchtails** by simply adding this to your visual studio code `settings.json`
 
 ```json
 "tailwindCSS.experimental.classRegex": [
