@@ -20,7 +20,7 @@ yarn add stitchtail
 
 ```json
 "tailwindCSS.experimental.classRegex": [
-	["stitchtail(?:<.+>)?\\({([^)]*)}\\)", "(?<!\\[{[^}]*?)[\"'`]([^\"'`]*)[\"'`]"]
+	["stitchtail(?:<.+>)?\\({([\\s\\S]*)}\\)", "(?<!\\[{[^}]*?)[\"'`]([^\"'`]*)[\"'`]"]
 ]
 ```
 
