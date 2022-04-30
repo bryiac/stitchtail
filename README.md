@@ -38,7 +38,7 @@ yarn add stitchtail
   };
 
   const classes = stitchtail<Props>({
-    base: "rounded-sm p-4 text-white",
+    base: "rounded-sm p-4 text-white text-center",
 
     variants: {
       colors: {
@@ -99,7 +99,7 @@ yarn add stitchtail
   import stitchtail from "stitchtail";
 
   const classes = stitchtail({
-    base: "rounded-sm p-4 text-white",
+    base: "rounded-sm p-4 text-white text-center",
 
     variants: {
       colors: {
