@@ -1,6 +1,6 @@
 {
   "name": "stitchtail",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "coloredwax",
   "license": "MIT",
   "description": "Generate classes depending on passed props using a base, variants, and compounds.",
