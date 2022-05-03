@@ -14,5 +14,8 @@
     "noUnusedParameters": true,
     "forceConsistentCasingInFileNames": true
   },
+  "typeAcquisition": {
+    "enable": true
+  },
   "include": ["src"]
 }
