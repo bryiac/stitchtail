@@ -1,7 +1,7 @@
 interface Parameters<Props, Propless> {
-  base: string,
-  variants?: Propless extends null ? Partial<{ [Key in keyof Props]: Props[Key] extends string | undefined ? Partial<{ [Value in Extract<Props[Key], string>]: string }> : string }> : Propless,
-  compounds?: Array<[Partial<Propless extends null ? Props : { [Key in keyof Propless]: Propless[Key] extends object ? keyof Propless[Key] : boolean }>, string]>
+	base: string,
+	variants?: Propless extends null ? Partial<{ [Key in keyof Props]: Props[Key] extends string | undefined ? Partial<{ [Value in Extract<Props[Key], string>]: string }> : string }> : Propless,
+	compounds?: Array<[Partial<Propless extends null ? Props : { [Key in keyof Propless]: Propless[Key] extends object ? keyof Propless[Key] : boolean }>, string]>
 }
 
 const stitchtail = <Props = null, Propless = null>({ base, variants, compounds }: Parameters<Props, Propless>) => {
@@ -12,12 +12,12 @@ const stitchtail = <Props = null, Propless = null>({ base, variants, compounds }
 			if (variants) {
 				Object.entries(props).forEach(([key, value]) => {
 					if (variants[key as keyof typeof variants] && value) {
-						let vari: unknown = variants as unknown;
+						const vari: unknown = variants as unknown;
 
 						classes.push(...((typeof variants[key as keyof typeof variants] === "string" ? variants[key as keyof typeof variants] : variants[key as keyof typeof variants][value as keyof { [key in keyof typeof vari]: typeof variants[key] }]) as string).split(" "));
 					}
 				});
-			};
+			}
 
 			if (compounds) {
 				for (let i = 0; i < compounds.length; i++) {
@@ -30,13 +30,13 @@ const stitchtail = <Props = null, Propless = null>({ base, variants, compounds }
 
 					if (entries.length === matches) {
 						classes.push(...compounds[i][1].split(" "));
-					};
-				};				
-			};
-		};
+					}
+				}				
+			}
+		}
 
 		return classes.filter(value => value.length > 0).join(" ").trim();
 	};
 };
 
-export { stitchtail as default, stitchtail };
+export { stitchtail as default };

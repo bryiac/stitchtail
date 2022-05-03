@@ -1,12 +1,18 @@
 {
   "compilerOptions": {
-    "target": "ES5",
-    "module": "CommonJS",
-    "lib": ["ES2017", "DOM"],
-    "outDir": "dist",
-    "removeComments": true,
-    "declaration": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "lib": ["dom", "esnext"],
     "strict": true,
+    "declaration": true,
+    "importHelpers": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "forceConsistentCasingInFileNames": true
   },
   "include": ["src"]
 }
