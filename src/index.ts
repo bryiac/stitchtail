@@ -2,10 +2,9 @@ interface Parameters<Props, Propless> {
 	base?: string,
 	variants?: Propless extends null ? Partial<{ [Key in keyof Props]: Props[Key] extends string | undefined ? Partial<{ [Value in Extract<Props[Key], string>]: string }> : string }> : Propless,
 	compounds?: Array<[Partial<Propless extends null ? Props : { [Key in keyof Propless]: Propless[Key] extends object ? keyof Propless[Key] : boolean }>, string]>,
-	defaults?: Partial<Propless extends null ? Props : { [Key in keyof Propless]: Propless[Key] extends object ? keyof Propless[Key] : boolean }>
 }
 
-const stitchtail = <Props = null, Propless = null>({ base, variants, compounds, defaults }: Parameters<Props, Propless>) => {
+const stitchtail = <Props = null, Propless = null>({ base, variants, compounds }: Parameters<Props, Propless>) => {
 	return (props?: Partial<Propless extends null ? Props : { [Key in keyof Propless]: Propless[Key] extends object ? keyof Propless[Key] : boolean }>) => {
 		const classes = base ? [...base.split(" ")] : [];
 
@@ -18,8 +17,6 @@ const stitchtail = <Props = null, Propless = null>({ base, variants, compounds, 
 						classes.push(...(variants[key as keyof typeof variants] as string).split(" "));
 					} else if (variants[key as keyof typeof variants][value as keyof { [key in keyof typeof vari]: typeof variants[key] }]) {
 						classes.push(...(variants[key as keyof typeof variants][value as keyof { [key in keyof typeof vari]: typeof variants[key] }] as string).split(" "));
-					} else if (defaults && defaults[key as keyof typeof defaults]) {
-						classes.push(...(defaults[key as keyof typeof defaults] as string).split(" "));
 					}
 				});
 			}
