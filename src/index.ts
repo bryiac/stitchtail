@@ -13,9 +13,9 @@ const stitchtail = <Props = null, Propless = null>({ base, variants, compounds }
 				Object.entries(props).forEach(([key, value]) => {
 					const vari: unknown = variants as unknown;
 
-					if (variants[key as keyof typeof variants] && typeof variants[key as keyof typeof variants] === "string") {
+					if (typeof variants[key as keyof typeof variants] === "string") {
 						classes.push(...(variants[key as keyof typeof variants] as string).split(" "));
-					} else if (variants[key as keyof typeof variants][value as keyof { [key in keyof typeof vari]: typeof variants[key] }]) {
+					} else if (typeof variants[key as keyof typeof variants] === "object" && variants[key as keyof typeof variants][value as keyof { [key in keyof typeof vari]: typeof variants[key] }]) {
 						classes.push(...(variants[key as keyof typeof variants][value as keyof { [key in keyof typeof vari]: typeof variants[key] }] as string).split(" "));
 					}
 				});
