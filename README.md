@@ -1,6 +1,13 @@
+
+
 <h1 align="center">
-  <i>~ stitchtail ~</i>
+  <b>⚠️ ARCHIVED ⚠️</b>
+
 </h1>
+
+<h3 align="center">
+  <i>~ stitchtail ~</i>
+</h3>
 
 <p align="center">
   Generate classes depending on passed props using a <strong><u>base</u></strong>, <strong><u>variants</u></strong>, and <strong><u>compounds</u></strong>.
